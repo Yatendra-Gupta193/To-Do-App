@@ -1,0 +1,153 @@
+:root {
+  --bg-light: #f0f4f8;
+  --bg-dark: #121212;
+  --text-dark: #2d3436;
+  --text-light: #ecf0f1;
+  --card-light: #ffffff;
+  --card-dark: #1e1e1e;
+  --primary: #00b894;
+  --accent: #9b59b6;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background:linear-gradient(to right, #2315eb7c, #00ffd5ab);
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark {
+  background: var(--bg-dark);
+  color: var(--text-light);
+}
+
+.container {
+  background-color: var(--card-light);
+  padding: 2rem;
+  border-radius: 15px;
+  width: 180%;
+  max-width: 500px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s;
+}
+
+body.dark .container {
+  background-color: var(--card-dark);
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, var(--accent), var(--primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.toggle-mode {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 10px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.input-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--primary);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #019270a8;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  background-color: #f1f1f1;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s;
+}
+
+body.dark li {
+  background-color: #2c2c2c;
+}
+
+li.completed span {
+  text-decoration: line-through;
+  color: gray;
+}
+
+li span {
+  flex: 1;
+  cursor: pointer;
+}
+
+.actions button {
+  margin-left: 8px;
+  background: none;
+  font-size: 1.1rem;
+}
+
+.edit-btn {
+  color: #3498db;
+}
+
+.delete-btn {
+  color: #e74c3c;
+}
+
+body.dark .edit-btn {
+  color: #74b9ff;
+}
+
+body.dark .delete-btn {
+  color: #ff7675;
+}
+
+@media (max-width: 480px) {
+  .input-section {
+    flex-direction: column;
+  }
+  input, button {
+    width: 100%;
+  }
+}
